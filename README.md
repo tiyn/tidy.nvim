@@ -1,6 +1,6 @@
 # tidy.nvim 🧹
 
-**tidy.nvim** removes trailing white space and empty lines on BufWritePre.
+**tidy.nvim** removes trailing white space and empty lines on BufLeave.
 
 ![tidy-demo](https://github.com/mcauley-penney/tidy.nvim/assets/59481467/f3807c69-2b36-4a14-b83a-dd0f2829e096)
 
