@@ -66,11 +66,14 @@ function M.setup(opts)
 
       local cursor_pos = vim.api.nvim_win_get_cursor(0)
 
-      -- delete trailing whitespace
-      vim.cmd([[:keepjumps keeppatterns %s/\s\+$//e]])
 
-      -- delete lines @ eof
-      vim.cmd([[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/,$d_]])
+      if vim.o.ma then
+      	-- delete trailing whitespace
+      	vim.cmd([[:keepjumps keeppatterns %s/\s\+$//e]])
+
+      	-- delete lines @ eof
+      	vim.cmd([[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/,$d_]])
+      end
 
       reset_cursor_pos(cursor_pos)
     end,
