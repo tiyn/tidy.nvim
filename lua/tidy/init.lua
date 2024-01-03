@@ -57,7 +57,7 @@ function M.setup(opts)
 
   local tidy_grp = vim.api.nvim_create_augroup("tidy", { clear = true })
 
-	vim.api.nvim_create_autocmd("BufWritePre", {
+	vim.api.nvim_create_autocmd("BufLeave", {
     group = tidy_grp,
     callback = function()
       if not M.enabled or is_excluded_ft(opts) or (vim.b.editorconfig ~= nil and not vim.tbl_isempty(vim.b.editorconfig)) then
